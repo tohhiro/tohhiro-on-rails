@@ -1,0 +1,5 @@
+# require_relative 'basic/basic_puts'
+# require_relative 'basic/basic_variable'
+# require_relative 'basic/user_input'
+# require_relative 'basic/basic_strings'
+require_relative 'basic/basic_quiz'
