@@ -1,0 +1,34 @@
+# RuboCop設定ファイル
+# https://docs.rubocop.org/rubocop/configuration.html
+
+AllCops:
+  TargetRubyVersion: 3.3
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - "vendor/**/*"
+    - "node_modules/**/*"
+
+# 日本語コメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# ドキュメントコメントを必須にしない
+Style/Documentation:
+  Enabled: false
+
+# frozen_string_literalコメントを必須にしない（学習用）
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# ファイル末尾の改行を必須にしない
+Layout/TrailingEmptyLines:
+  Enabled: false
+
+# メソッドの長さ制限を緩和
+Metrics/MethodLength:
+  Max: 20
+
+# 行の長さ制限を緩和
+Layout/LineLength:
+  Max: 120
