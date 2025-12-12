@@ -21,4 +21,5 @@
 # require_relative 'data_structure/array_iteration'
 # require_relative 'data_structure/filter_array'
 # require_relative 'data_structure/hash_array'
-require_relative 'data_structure/each_array'
+# require_relative 'data_structure/each_array'
+require_relative 'class_structure/basic_class'
