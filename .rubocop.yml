@@ -14,6 +14,7 @@ AllCops:
     - "vendor/**/*"
     - "tmp/**/*"
     - "log/**/*"
+    - "app/views/**/*"
 
 Style/Documentation:
   Enabled: false
