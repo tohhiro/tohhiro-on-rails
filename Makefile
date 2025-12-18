@@ -16,7 +16,8 @@ logs:
 	docker compose logs -f web
 
 console:
-	docker compose exec web rails console
+	# rails cを起動する。irbとでるが、irbはrubyで、rails c（rails console）はrailsアプリケーションのコンテキストで動作する。
+	docker compose exec web rails console 
 
 migrate:
 	docker compose exec web rails db:migrate
