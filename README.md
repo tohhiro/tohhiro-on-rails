@@ -49,6 +49,9 @@ make console
 make migrate
 # 実行されるコマンド: docker compose exec web rails db:migrate
 
+# マイグレーションの状態を確認
+docker compose exec web rails db:migrate:status
+
 # テストを実行
 make test
 # 実行されるコマンド: docker compose exec web rails test
@@ -97,6 +100,44 @@ docker compose exec web rails db:reset
 
 # シードデータを投入
 docker compose exec web rails db:seed
+```
+
+#### ActiveRecord でレコードを作成
+
+Rails コンソールで直接レコードを作成する方法：
+
+```bash
+# Rails コンソールを起動
+make console
+```
+
+```ruby
+# 方法1: new + save
+post = Post.new(title: "Title 1", body: "Body 1")
+post.save
+
+# 方法2: create（new + save を一度に実行）
+post = Post.create(title: "Title 1", body: "Body 1")
+
+# 方法3: create!（バリデーションエラー時に例外を投げる）
+post = Post.create!(title: "Title 1", body: "Body 1")
+
+# レコードの取得
+Post.all          # 全レコード取得
+Post.first        # 最初のレコード
+Post.last         # 最後のレコード
+Post.find(1)      # ID で検索
+Post.find_by(title: "Title 1")  # 条件で検索
+Post.all.order(id: :desc) # ID降順で表示
+Post.all.limit(2) # 上位2件のみ
+
+# レコードの更新
+post = Post.first
+post.update(title: "New Title")
+
+# レコードの削除
+post = Post.first
+post.destroy
 ```
 
 #### ジェネレーターコマンド
