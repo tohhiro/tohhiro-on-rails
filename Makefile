@@ -1,4 +1,4 @@
-.PHONY: up down restart build logs console migrate test rubocop
+.PHONY: up down restart build logs console migrate seed test rubocop
 
 up:
 	docker compose up
@@ -21,6 +21,9 @@ console:
 
 migrate:
 	docker compose exec web rails db:migrate
+
+seed:
+	docker compose exec web rails db:seed
 
 test:
 	docker compose exec web rails test
