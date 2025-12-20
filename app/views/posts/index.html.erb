@@ -1,6 +1,14 @@
 <h1>Posts</h1>
 <ul>
-  <li><%= link_to "Post 1", post_path(1) %></li>  <!-- # <li><a href="/posts/1">Post 1</a></li> と同じ -->
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li> <!-- Railsでは、post_path(post)とすると、post.idが使われる -->
+  <% end %>
+</ul>
+
+
+<!-- # <li><a href="/posts/1">Post 1</a></li> と同じ -->
+<!-- <ul>
+  <li><%= link_to "Post 1", post_path(1) %></li>  
   <li><%= link_to "Post 2", post_path(2) %></li>
   <li><%= link_to "Post 3", post_path(3) %></li>
-</ul>
+</ul> -->
