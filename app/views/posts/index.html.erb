@@ -7,6 +7,13 @@
     <li>
       <%= link_to post.title, post_path(post) %> <!-- Railsでは、post_path(post)とすると、post.idが使われる（post.idでもOK） -->
       <%= link_to "Edit", edit_post_path(post) %> <!-- Railsでは、edit_post_path(post)とすると、post.idが使われる（post.idでもOK） -->
+      <%= 
+          button_to "Delete", 
+          post_path(post), 
+          method: :delete, 
+          form: { class: "delete-form" },
+          data: { turbo_confirm: "Are you sure?" }
+      %>
     </li>
   <% end %>
 </ul>
