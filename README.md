@@ -190,6 +190,13 @@ docker compose exec web bash
 docker compose run --rm web bash
 ```
 
+### routes の確認
+
+```bash
+# postsのroutesを表示（postsのところを変更する）
+docker compose exec web rails routes -c posts
+```
+
 ## アプリケーションへのアクセス
 
 アプリケーションは以下の URL で動作します: http://localhost:3000
