@@ -95,8 +95,11 @@ docker compose exec web rails db:create
 # マイグレーションをロールバック
 docker compose exec web rails db:rollback
 
-# データベースをリセット
+# データベースをリセットしseedを実行
 docker compose exec web rails db:reset
+
+# データベースをリセット
+docker compose exec web rails db:migrate:reset
 
 # シードデータを投入
 docker compose exec web rails db:seed
