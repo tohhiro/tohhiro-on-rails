@@ -14,8 +14,12 @@ class PostsController < ApplicationController
 
   def create
     # Post.create(title: params[:post][:title], body: params[:post][:body])
-    Post.create(post_params)
-    redirect_to root_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
 
