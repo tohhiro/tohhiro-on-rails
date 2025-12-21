@@ -1,29 +1,6 @@
 <h1>Edit Post</h1>
-<%= form_with model: @post do |form| %>
-    <div>
-        <%= form.label :title %>
-        <%= form.text_field :title %>
-        <% if @post.errors[:title].any? %>
-            <ul>
-                <% @post.errors.full_messages_for(:title).each do |message| %>
-                    <li class="error-message"><%= message %></li>
-                <% end %>
-            </ul>
-        <% end %>
-    </div>
-    <div>
-        <%= form.label :body %>
-        <%= form.text_area :body %>
-        <ul>
-            <% @post.errors.full_messages_for(:body).each do |message| %>
-                <li class="error-message"><%= message %></li>
-            <% end %>
-        </ul>
-    </div>
-    <div>
-        <%= form.submit %>
-    </div>
-<% end %>
+
+<%= render "form", post: @post %>
 
 <p class="back-link">
     <%= link_to "Back", root_path %>
