@@ -1,4 +1,7 @@
-<h1>Posts</h1>
+<h1>
+  Posts
+  <%= link_to "New Post", new_post_path %>
+</h1>
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, post_path(post) %></li> <!-- Railsでは、post_path(post)とすると、post.idが使われる -->
