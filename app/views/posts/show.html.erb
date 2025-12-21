@@ -1,5 +1,6 @@
 <h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<!-- pタグで囲みつつ、改行をbrタグに変換して反映させる -->
+<%= simple_format(@post.body) %>
 <p class="back-link">
     <%= link_to "Back", root_path %>
 </p>
