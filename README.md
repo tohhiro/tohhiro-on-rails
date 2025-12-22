@@ -149,6 +149,9 @@ post.destroy
 # コントローラを生成
 docker compose exec web rails generate controller ControllerName
 
+# コントローラ作成 + routesの作成はスキップ
+docker compose exec web rails generate controller ControllerName --skip-routes
+
 # モデルを生成
 docker compose exec web rails generate model ModelName
 
