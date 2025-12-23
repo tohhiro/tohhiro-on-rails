@@ -7,7 +7,15 @@
 <ul>
     <% @post.comments.each do |comment| %>
         <% if comment.persisted? %>
-        <li><%= comment.body %></li>
+        <li>
+            <%= comment.body %>
+            <%= button_to "Delete", 
+                post_comment_path(post_id: @post.id, id: comment.id), 
+                method: :delete, 
+                form: { class: "delete-form" },
+                data: { turbo_confirm: "Are you sure?" } 
+            %>
+        </li>
         <% end %>
     <% end %>
 </ul>
